@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="fr.trevidos.GLShadersFeature"
+      label="GLShadersFeature"
+      version="1.0.2"
+      provider-name="Trevidos.free.fr">
+
+   <description url="http://trevidos.free.fr/GLShaders">
+      Provided a simple CG and GLSL editor, a link with the compiler
+and some new kind of file used for vertex and fragment program.
+see http://trevidos.free.fr/GLShaders/glslc.zip for a WIN32 version of
+the 3DLabs GLSL Front End Compiler.
+For another version, see http://developer.3dlabs.com/downloads/glslcompiler/
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright Vincent &quot;Trevidos&quot; Martinez
+email: trevidos@hotmail.com
+   </copyright>
+
+   <license url="http://www.gnu.org/copyleft/lesser.html">
+      This feature is under LGPL license. See http://www.gnu.org/copyleft/lesser.html for more informations
+   </license>
+
+   <url>
+      <update label="Trevidos GLShaders site" url="http://trevidos.free.fr/GLShaders"/>
+   </url>
+
+   <plugin
+         id="fr.trevidos.GLShaderEditors"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="fr.trevidos.GLShaderFiles"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="fr.trevidos.GLShaderTools"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://trevidos.free.fr/GLShaders">
+      Provided a simple CG and GLSL editor, a link with the compiler
+and some new kind of file used for vertex and fragment program.
+see http://trevidos.free.fr/GLShaders/glslc.zip for a WIN32 version
+of
+the 3DLabs GLSL Front End Compiler.
+For another version, see http://developer.3dlabs.com/downloads/glslcompiler/
+   </description>
+   <feature url="features/fr.trevidos.GLShadersFeature_1.0.2.jar" id="fr.trevidos.GLShadersFeature" version="1.0.2">
+      <category name="OpenGL"/>
+   </feature>
+   <category-def name="OpenGL" label="OpenGL"/>
+</site>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="OpenGL Shaders Files"
+            id="cgfiles">
+      </category>
+      <wizard
+            category="cgfiles"
+            class="cgfiles.wizards.VpFileNewWizard"
+            icon="icons/cg.png"
+            id="cgfiles.wizards.VpFileNewWizard"
+            name="Cg Vertex Program">
+            <description> 
+              Create a new Cg Vertex Program File 
+          </description> 
+      </wizard>
+      <wizard
+            category="cgfiles"
+            class="cgfiles.wizards.FpFileNewWizard"
+            icon="icons/cg.png"
+            id="cgfiles.wizards.FpFileNewWizard"
+            name="Cg Fragment Program">
+          <description> 
+             Create a new Cg Fragment Program File
+          </description> 
+      </wizard>
+      <wizard
+            category="cgfiles"
+            class="cgfiles.wizards.GLSLFileNewWizard"
+            icon="icons/opengl.png"
+            id="cgfiles.wizards.GLSLFileNewWizard"
+            name="GLSL Program">
+          <description> 
+             Create a new GLSL Program File
+          </description> 
+      </wizard>
+   </extension>
+
+</plugin>
