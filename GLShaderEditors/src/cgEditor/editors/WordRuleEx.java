@@ -9,7 +9,6 @@ import org.eclipse.jface.text.rules.IRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.IWordDetector;
 import org.eclipse.jface.text.rules.Token;
-import org.eclipse.jface.text.rules.WordRule;
 
 /**
  * An implementation of {@link IRule} capable of detecting words. A word rule also allows to
@@ -31,7 +30,7 @@ public class WordRuleEx implements IRule {
 	/** The column constraint. */
 	protected int fColumn= UNDEFINED;
 	/** The table of predefined words and token for this rule. */
-	protected Map fWords= new HashMap();
+	protected Map<String, IToken> fWords= new HashMap<>();
 	/** Buffer used for pattern detection. */
 	private StringBuffer fBuffer= new StringBuffer();
 	/**
@@ -122,6 +121,7 @@ public class WordRuleEx implements IRule {
 	/*
 	 * @see IRule#evaluate(ICharacterScanner)
 	 */
+	@Override
 	public IToken evaluate(ICharacterScanner scanner) {
 		int c= scanner.read();
 		if (c != ICharacterScanner.EOF && fDetector.isWordStart((char) c)) {

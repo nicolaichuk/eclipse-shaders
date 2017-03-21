@@ -56,6 +56,7 @@ public  class CgFileNewWizard extends Wizard implements INewWizard {
 	 * This method is called when 'Finish' button is pressed in the wizard. We
 	 * will create an operation and run it using wizard as execution context.
 	 */
+	@Override
 	public boolean performFinish() {
 		IFile file = page.createNewFile();
 		if (file == null)
@@ -110,7 +111,7 @@ public  class CgFileNewWizard extends Wizard implements INewWizard {
 		}
 
 		final ISelection selection = new StructuredSelection(resource);
-		Iterator itr = parts.iterator();
+		Iterator<IWorkbenchPart> itr = parts.iterator();
 		while (itr.hasNext()) {
 			IWorkbenchPart part = (IWorkbenchPart) itr.next();
 
@@ -119,13 +120,14 @@ public  class CgFileNewWizard extends Wizard implements INewWizard {
 			if (part instanceof ISetSelectionTarget)
 				target = (ISetSelectionTarget) part;
 			else
-				target = (ISetSelectionTarget) part
+				target = part
 						.getAdapter(ISetSelectionTarget.class);
 
 			if (target != null) {
 				// select and reveal resource
 				final ISetSelectionTarget finalTarget = target;
 				window.getShell().getDisplay().asyncExec(new Runnable() {
+					@Override
 					public void run() {
 						finalTarget.selectReveal(selection);
 					}
@@ -137,6 +139,7 @@ public  class CgFileNewWizard extends Wizard implements INewWizard {
 	/**
 	 * 
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		initializeDefaultPageImageDescriptor();
 	}

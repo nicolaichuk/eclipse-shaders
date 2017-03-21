@@ -20,6 +20,7 @@ public class CgConfiguration extends ShaderFileConfiguration {
 	}
 
 	
+	@Override
 	protected ShaderFileScanner getTagScanner() {
 		if(scanner ==null)
 		{

@@ -20,6 +20,7 @@ public class GLSLConfiguration extends ShaderFileConfiguration {
 	}
 
 	
+	@Override
 	protected ShaderFileScanner getTagScanner() {
 		if(scanner ==null)
 		{

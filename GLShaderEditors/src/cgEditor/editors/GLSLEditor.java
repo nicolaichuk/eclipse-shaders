@@ -18,6 +18,7 @@ public class GLSLEditor extends TextEditor implements IPropertyChangeListener {
 
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 	}
@@ -44,6 +45,7 @@ public class GLSLEditor extends TextEditor implements IPropertyChangeListener {
 		return affect || super.affectsTextPresentation(event);
 	}
 
+	@Override
 	public void propertyChange(PropertyChangeEvent event) {
 		handlePreferenceStoreChanged(event);
 	}

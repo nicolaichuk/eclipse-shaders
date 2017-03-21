@@ -48,6 +48,7 @@ public class CgCompilerPreferencePage extends FieldEditorPreferencePage
 	 * GUI blocks needed to manipulate various types of preferences. Each field
 	 * editor knows how to save and restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {	
 		addField(new FileFieldEditor(PreferenceConstants.GLSLPATH,
 				"&GLSL front end compiler exe", getFieldEditorParent()));
@@ -73,6 +74,7 @@ public class CgCompilerPreferencePage extends FieldEditorPreferencePage
 	 * 
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 	
@@ -94,6 +96,7 @@ public class CgCompilerPreferencePage extends FieldEditorPreferencePage
 			 * 
 			 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
 			 */
+			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				try {
 					IProject[] projects = null;
@@ -111,7 +114,7 @@ public class CgCompilerPreferencePage extends FieldEditorPreferencePage
 							projectToBuild.build(
 									IncrementalProjectBuilder.FULL_BUILD,
 									cgBuilder.BUILDER_ID, null,
-									new SubProgressMonitor(monitor, 1));
+									new SubProgressMonitor(monitor, 1)); // https://eclipse.org/articles/Article-Progress-Monitors/article.html
 						} else {
 							monitor.worked(2);
 						}

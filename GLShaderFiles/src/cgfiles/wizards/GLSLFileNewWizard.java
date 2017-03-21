@@ -30,6 +30,7 @@ public class GLSLFileNewWizard extends CgFileNewWizard {
 	 * Adding the page to the wizard.
 	 */
 
+	@Override
 	public void addPages() {
 		page = new GLSLFileWizardPage(
 				"GLSL Program File",
@@ -47,6 +48,7 @@ public class GLSLFileNewWizard extends CgFileNewWizard {
 	 * 
 	 * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 		this.selection = selection;
@@ -56,7 +58,8 @@ public class GLSLFileNewWizard extends CgFileNewWizard {
 	/* (non-Javadoc)
      * Method declared on BasicNewResourceWizard.
      */
-    protected void initializeDefaultPageImageDescriptor() {
+    @Override
+	protected void initializeDefaultPageImageDescriptor() {
        ImageDescriptor desc = CgfilesPlugin.getImageDescriptor("icons/openglbig.png");//$NON-NLS-1$
 	   setDefaultPageImageDescriptor(desc);
     }

@@ -74,12 +74,14 @@ public class CgEditorPreferencePage extends PreferencePage implements
 
 		list.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				String str = ((List) e.getSource()).getSelection()[0];
 				token = TokenManager.getToken(str);
 				updateValues();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				widgetSelected(e);
 
@@ -107,6 +109,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 		color.addListener(new IPropertyChangeListener()
 				{
 
+					@Override
 					public void propertyChange(PropertyChangeEvent event) {
 						RGB rgb = (RGB) event.getNewValue();
 						if(token!=null)
@@ -126,6 +129,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 		bold.setLayoutData(data);
 		bold.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (bold.getSelection()) {
 					// On enleve la selection
@@ -152,6 +156,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				widgetSelected(e);
 
@@ -178,6 +183,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 		label.setText("Italic");
 		italic.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (italic.getSelection()) {
 					// On enleve la selection
@@ -204,6 +210,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				widgetSelected(e);
 
@@ -224,6 +231,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 		label.setText("Strikethrough");
 		strikethrough.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (strikethrough.getSelection()) {
 					// On enleve la selection
@@ -252,6 +260,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				widgetSelected(e);
 
@@ -272,6 +281,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 		label.setText("Underline");
 		underline.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if (underline.getSelection()) {
 					// On enleve la selection
@@ -300,6 +310,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				widgetSelected(e);
 
@@ -322,6 +333,7 @@ public class CgEditorPreferencePage extends PreferencePage implements
 				.setSelection((currentAttribute.getStyle() & TextAttribute.STRIKETHROUGH) != 0);
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		// TODO Auto-generated method stub
 	}

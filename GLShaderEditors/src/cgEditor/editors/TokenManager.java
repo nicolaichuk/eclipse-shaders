@@ -20,7 +20,7 @@ public class TokenManager {
 	 * @return
 	 */
 	static public Color getColor(RGB rgb) {
-		Color color = (Color) colorTable.get(rgb);
+		Color color = colorTable.get(rgb);
 		if (color == null) {
 			color = new Color(Display.getCurrent(), rgb);
 			colorTable.put(rgb, color);
@@ -34,7 +34,7 @@ public class TokenManager {
 	 * @return
 	 */
 	static public Token getToken(String str) {
-		Token token = (Token) tokenTable.get(str);
+		Token token = tokenTable.get(str);
 		if (token == null) {
 			token = new Token(new TextAttribute(null));
 			tokenTable.put(str, token);

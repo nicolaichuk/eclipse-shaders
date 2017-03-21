@@ -23,6 +23,7 @@ public class CgEditor extends TextEditor implements IPropertyChangeListener {
 		CgEditorPlugin.getDefault().getPreferenceStore().addPropertyChangeListener(this);
 		
 	}
+	@Override
 	public void dispose() {		
 		super.dispose();
 	}
@@ -46,6 +47,7 @@ public class CgEditor extends TextEditor implements IPropertyChangeListener {
 		return affect ||super.affectsTextPresentation(event);
 	}
 	
+	@Override
 	public void propertyChange(PropertyChangeEvent event) {
 		handlePreferenceStoreChanged(event);
 	}

@@ -46,6 +46,7 @@ public class ShaderFileScanner extends RuleBasedScanner {
 
 		protected int index = 0;
 		
+		@Override
 		public boolean isWordStart(char c) {
 			set.clear();
 			index = 1;
@@ -62,6 +63,7 @@ public class ShaderFileScanner extends RuleBasedScanner {
 			return start;
 		}
 
+		@Override
 		public boolean isWordPart(char c) {
 			if (set.isEmpty()) {
 				return isNotEscChar(c);

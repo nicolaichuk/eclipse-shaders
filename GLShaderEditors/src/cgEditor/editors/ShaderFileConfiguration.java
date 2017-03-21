@@ -3,9 +3,6 @@
  */
 package cgEditor.editors;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
@@ -14,11 +11,7 @@ import org.eclipse.jface.text.Region;
 import org.eclipse.jface.text.presentation.IPresentationReconciler;
 import org.eclipse.jface.text.presentation.PresentationReconciler;
 import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
-import org.eclipse.jface.text.rules.IPredicateRule;
-import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.ITokenScanner;
-import org.eclipse.jface.text.rules.MultiLineRule;
-import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.ui.editors.text.TextSourceViewerConfiguration;
 
@@ -56,6 +49,7 @@ public abstract class ShaderFileConfiguration extends TextSourceViewerConfigurat
 		}
 
 		// TODO This method works with 3.0 and 3.1.2 but does't work well with Eclipse 3.1.1.
+		@Override
 		public IRegion getDamageRegion(ITypedRegion partition, DocumentEvent e, boolean documentPartitioningChanged) {
 			if (!documentPartitioningChanged) {
 				String source = fDocument.get();

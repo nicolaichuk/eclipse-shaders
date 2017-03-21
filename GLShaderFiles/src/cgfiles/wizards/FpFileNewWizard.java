@@ -32,6 +32,7 @@ public class FpFileNewWizard extends CgFileNewWizard {
 	 * Adding the page to the wizard.
 	 */
 
+	@Override
 	public void addPages() {
 		page = new FpFileWizardPage(
 				"Create a new Fragment Program File",
@@ -49,6 +50,7 @@ public class FpFileNewWizard extends CgFileNewWizard {
 	 * 
 	 * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 		this.selection = selection;
